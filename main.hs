@@ -52,4 +52,4 @@ isPalindrome x = if head x /= last x then False  else isPalindrome( tail (init x
 --goal to see two ints wether they are coprime
 coprime :: Integer -> Integer -> Integer
 coprime 1 1 = 1 
-coprime x y = if x `mod` y == 0 then y else coprime(1 1)
+--coprime x y = if x `mod` y == 0 then y else coprime(1 1)
