@@ -26,7 +26,11 @@ duplicate myList = [head myList] ++ [head myList] ++ duplicate(tail myList)
 -- Goal given a sorted list remove duplicated elements
 removeDuplicate :: [Integer] -> [Integer]
 removeDuplicate [] = []
-removeDuplicate
+removeDuplicate (x: xs) --seperate the head into list x and tail into list xs
+    | x `elem` xs = removeDuplicate xs --check if x list (head) is in list xs(tail) if removeDuplicate on xs
+    | otherwise = x : removeDuplicate xs --otherwise add x to the the xs list
+
+
 
 --Basic Drill 5: rotate
 --Goal shfit leter arround based on an integer value 
@@ -36,3 +40,16 @@ removeDuplicate
 flatten :: [[Integer]] -> [Integer]
 flatten [] = []
 flatten myList = head myList ++ flatten(tail myList)
+
+--Basic Drill 7: palindrome
+--goal see if a list is a palidrome
+isPalindrome :: String -> Bool 
+isPalindrome [] = True
+isPalindrome (x:[]) = True
+isPalindrome x = if head x /= last x then False  else isPalindrome( tail (init x))
+
+--Basic Drill 8: Eucidan Formula
+--goal to see two ints wether they are coprime
+coprime :: Integer -> Integer -> Integer
+coprime 1 1 = 1 
+coprime x y = if x `mod` y == 0 then y else coprime(1 1)
