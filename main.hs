@@ -34,6 +34,10 @@ removeDuplicate (x: xs) --seperate the head into list x and tail into list xs
 
 --Basic Drill 5: rotate
 --Goal shfit leter arround based on an integer value 
+rotate:: String -> Int -> String 
+rotate xs n = take len . drop(n `mod` len) . cycle $ xs
+    where len = length xs
+
 
 --Baic Drill 6: flatten
 -- given a list of list form a single list of the concatination
@@ -51,5 +55,5 @@ isPalindrome x = if head x /= last x then False  else isPalindrome( tail (init x
 --Basic Drill 8: Eucidan Formula
 --goal to see two ints wether they are coprime
 coprime :: Integer -> Integer -> Integer
-coprime 1 1 = 1 
+coprime x y = gcd x y
 --coprime x y = if x `mod` y == 0 then y else coprime(1 1)
