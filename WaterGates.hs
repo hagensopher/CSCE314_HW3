@@ -37,7 +37,4 @@ flipBools myList n = []
 -- faselList = false:falseList //makes an infinite list of false
 -- getNFasle = take n falseList //grab the first 10 false
 
-flip12 :: [Bool] -> Integer -> [Bool]
-flip12 [] _ = []
-flip12 (x:xs) i = if (i==12) then not x : flip12(xs i+1) else x:flip12(xs i+1)
 
