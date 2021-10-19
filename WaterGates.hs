@@ -23,5 +23,5 @@ waterGate n
 waterGate n 
     | n == n-(n-1) = n + waterGate(n-1)
     | n == n-(n-2) =  mod (n+1) 2 - waterGate(n-1) 
-    | n == n-(n-3) = if mod(n+2) 2 ==0 && mod(n+2) 3 == 0 then waterGate(n-1) else 1- waterGate(n-1)
+    | n == n-(n-3) = if mod (n+2) 6 == 0 then waterGate(n-1) else 1- waterGate(n-1)
     | otherwise = if mod n 2 == 0 && mod n 3 /= 0 then 1 + waterGate(n-1) else 1- waterGate(n-1)
