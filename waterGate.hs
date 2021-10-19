@@ -1,6 +1,6 @@
 --this function will create a list of false based on N
-createList:: Integer -> Integer 
-createList n = countOpenGates (looper ( [False | x <- [1..n]] ) 1 n) 0
+waterGate:: Integer -> Integer 
+waterGate n = countOpenGates (looper ( [False | x <- [1..n]] ) 1 n) 0
 
 --this will count the open gates
 countOpenGates:: [Bool] -> Integer ->Integer
