@@ -1,8 +1,17 @@
+--this function will create a list of false based on N
+createList:: Integer -> Integer 
+createList n = countOpenGates (looper ( [False | x <- [1..n]] ) 1 n) 0
+
+--this will count the open gates
+countOpenGates:: [Bool] -> Integer ->Integer
+countOpenGates [] counter = counter
+countOpenGates (x:xs) counter = if x then countOpenGates xs (counter+1) else countOpenGates xs counter
+
 --this is the outerloop which goes through the days
 --i will count up
-looper:: [Bool] -> Integer ->Integer ->Integer -> [Bool]
-looper myList _ _ 0= myList
-looper myList n i stopper= looper (flip12 myList 1 i) n (i+1) (stopper -1)
+looper:: [Bool] -> Integer ->Integer -> [Bool]
+looper myList _ 0= myList
+looper myList i stopper= looper (flip12 myList 1 i) (i+1) (stopper -1)
 
 
 --this is the inner loop which checks each time 
