@@ -27,8 +27,8 @@ listOfComposite  = [k | k<-[2..], not (isPrime k), odd k]
 
 --this function will loop through a list of composite numbers to check when the conjecture is false
 compositeLooper:: [Integer] -> Bool -> Integer 
-compositeLooper ans False = head ans
-compositeLooper (x:xs) isStopped = if not isStopped then x else compositeLooper xs (loopOfPrimes listOfPrimes x)
+--compositeLooper ans False = head ans
+compositeLooper (x:xs) isStopped = if not (loopOfPrimes listOfPrimes x) then x else compositeLooper xs (loopOfPrimes listOfPrimes x)
 
 goldBach:: Integer 
 goldBach = compositeLooper listOfComposite True
