@@ -55,5 +55,5 @@ isPalindrome x = if head x /= last x then False  else isPalindrome( tail (init x
 --Basic Drill 8: Eucidan Formula
 --goal to see two ints wether they are coprime
 coprime :: Integer -> Integer -> Integer
-coprime x y = gcd x y
---coprime x y = if x `mod` y == 0 then y else coprime(1 1)
+--coprime x y = gcd x y
+coprime x y = if x `mod` y == 0 then y else coprime y (mod x y)
