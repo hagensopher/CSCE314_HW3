@@ -10,9 +10,7 @@ myReverse listOut = myReverse(tail listOut) ++ [head listOut]
 -- Goal is to see if the value is in the list
 isElement :: Integer -> [Integer] -> Bool 
 isElement _ [] = False
-isElement x (y:myList) -- (x:y) syntax means x in one list and y in another list without x (good for recursion)
-    | y == x = True --if y == x we then set True
-    | otherwise = isElement x myList --otherwise we do this (call the function again with the same value but a shorter list?)
+isElement n (x:xs) = if n==x then True else isElement n xs
 
 
 -- Basic Drill 3: duplicate
